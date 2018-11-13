@@ -1,0 +1,348 @@
+/* 
+author: Chi-Yuan Chang (sevenDollars);
+filename: main.css;
+Date: 11 Nov 2018;
+*/
+/**************************************************
+Fonts
+Roboto Slab
+Roboto
+
+Font Scaling
+6.854rem
+4.236rem
+2.618rem
+1.618rem
+1.0rem
+0.618rem
+
+Colour scheme
+hsl(240, 30%, 40%)
+hsl(66, 33%, 81%)
+hsl(240, 9%, 37%)
+hsl(240, 16%, 69%)
+**************************************************/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,400i,500,500i,700,900');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*includes content, padding and border*/
+}
+html{
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    color: hsl(240, 30%, 40%);
+}
+/*************************** 
+DEFAULTS - MOBILE FIRST 
+***************************/
+h1{
+    font: 700 1.618rem 'Roboto Slab', serif;
+}
+h2{
+    font: 700 2.618rem 'Roboto Slab', serif;
+    text-align: center;
+}
+h2::before{
+    content: open-quote;
+}
+h2::after{
+    content: close-quote;
+}
+li, p, a{
+    font: 400 1rem 'Roboto', sans-serif;
+}
+p {
+    padding: 0.618rem 0;
+}
+pre, code, kbd{
+    font: normal 1.0rem 'Roboto Slab', serif; 
+}
+/***************************
+    LAYOUT - MOBILE FIRST
+***************************/
+@media screen and (min-width: 500px){
+    .wrapper{
+        width: 95%;
+        margin: 0 auto;
+        background-color: hsl(66, 33%, 81%);
+    }
+    header{
+        min-height: 160px;
+        width: 100%;
+        color: hsl(240, 30%, 40%);
+        padding: 0.618rem;
+        background-image: url(../img/nicolas-picard-208276-unsplash.jpg);
+        background-size: 120%;
+    }
+    nav{
+        min-height: 240px;
+        width: 100%;
+    }
+    nav li{
+        width: 100%;
+        list-style: none;
+        margin: 0 0 0.618rem;
+    }
+    nav a,
+    nav a:link,
+    nav a:visited{
+        min-height: 2.618rem;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        text-decoration: none;
+        letter-spacing: 0.618rem;
+        color: hsl(66, 33%, 81%);
+        background-color: hsl(240, 9%, 37%);
+        transition: background 0.3s;
+    }
+    nav a:active,
+    nav a:focus,
+    nav a:hover{
+        color: hsl(240, 30%, 40%);
+        background-color: hsl(240, 16%, 69%);
+    }
+    main{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 1rem 0;
+    }
+    .col{
+        width: 100%;
+        text-align: center;
+    }
+    .col::after{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 80px;
+        content: "......";
+        font-size: 4.236rem;
+    }
+    .col img{
+        width: 100%;
+        margin-bottom: 0.618rem;
+    }
+    .col p{
+        text-align: justify;
+    }
+    h2{
+        display: inline-block;
+        max-width: 400px;
+        margin: 1.618rem 1.618rem 1.618rem;
+        padding: 1rem;
+        border: 1rem double hsl(240, 30%, 40%);
+    }
+    p.image{
+        text-align: center;
+        /*I still don't know why I must use p.image and then it works*/
+    }
+    .image{
+        margin-bottom: 1rem;
+        background-color: #fff;
+        box-shadow: 0 0 3px hsl(240, 16%, 69%);
+        padding: 0.618rem;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    footer{
+        width: 100%;
+        margin-top: 0.618rem;
+        padding: 0.618rem;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(240, 9%, 37%);
+        color: hsl(66, 33%, 81%);
+    }
+    footer p {
+        padding: 0 0 0.2rem 0;
+        font-size: 1rem;
+    }
+    footer li{
+        width: 100%;
+        text-align: center;
+        list-style: none;
+    }
+    footer a,
+    footer a:link,
+    footer a:visited{
+        text-decoration: none;
+        color: hsl(66, 33%, 81%);
+        font-size: 1em;
+    }
+    footer a:focus,
+    footer a:hover{
+        color: hsl(240, 16%, 69%);
+    }
+}
+@media screen and (min-width: 600px){
+/*
+    wrapper - 100%
+    header - 100%
+    nav - 90%
+    links - 20% of nav
+    main - 90%
+    columns - 50% of main
+    column image - 60% of column
+    footer - 90%
+*/
+    h1{
+        font-size: 2.618rem;
+    }
+    h2{
+        margin: 5% 0;
+        border: none;
+        font-size: 1.618rem;
+        text-align: center;
+    }
+    .wrapper{
+        width: 100%;
+    }
+    header{
+        background-size: 100%;
+        background-position: 80px -20px;
+    }
+    nav{
+        min-height: 0;
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    nav li{
+        width: 20%;
+        float: left;
+        margin: 0;
+    }
+    nav a,
+    nav a:link,
+    nav a:visited{
+/*        margin: 0 3%;*/
+        font-size: 1rem;
+        letter-spacing: 0.3rem;
+    }
+    main{
+        width: 90%;
+    }
+    .col{
+        width: 50%;
+        margin-bottom: 2rem;
+        padding: 0 2%;
+        float: left;
+    }
+    .col::after{
+        content: none;
+    }
+    .image{
+        width: 60%;
+        font-size: 0.8em;
+        float: left;
+        margin: 0.8rem 1rem 0 0;
+        padding: 0.4rem;
+    }
+    footer{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+@media screen and (min-width: 800px){
+/*
+    header - 100%
+    nav - 90%
+    links - 20% of nav
+    main - 90%
+    columns - 50% of main
+    column image - 50% of column
+    footer - 100%
+*/
+    h1 {
+        font-size: 3.2rem;
+    }
+    h2 {
+        font-size: 1.618rem;
+    }
+    .image{
+        width: 50%;
+        margin: 0.8rem 1rem 0 0;
+    }
+    nav{
+        width: 90%;
+    }
+    nav a,
+    nav a:link,
+    nav a:visited{
+        margin: 0 auto;
+        font-weight: 500;
+        font-size: 1.3rem;
+        letter-spacing: 0.3rem;
+        color: hsl(240, 30%, 40%);
+        background-color: hsl(66, 33%, 81%);
+        transition: background 0.3s;
+    }
+    nav a:active,
+    nav a:focus,
+    nav a:hover{
+        color: hsl(66, 33%, 81%);
+        background-color: hsl(240, 9%, 37%);
+    }
+    footer{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1200px){
+/*
+    header - 100%
+    nav - 30%
+    links - 100% of nav
+    main - 70%
+    columns - 50% of main
+    column image - 55% of column width
+    footer - 100%
+*/
+    h2 {
+        max-width: 600px;
+        font-size: 2.5em;
+    }
+    header{
+        background-size: 75%;
+        background-position: 150px 0px;
+    }
+    nav{
+        width: 30%;
+        float: left;
+        margin: 3rem 0 0 0;
+    }
+    nav li {
+        width: 100%;
+    }
+    nav a,
+    nav a:link,
+    nav a:visited{
+        font-weight: 700;
+        font-size: 1.7em;
+        border: none;
+        transition: padding-left 0.3s;
+    }
+    nav a:active,
+    nav a:focus,
+    nav a:hover{
+        color: hsl(240, 30%, 40%);
+        background-color: hsl(66, 33%, 81%);
+        padding-left: 20%;
+    }
+    main{
+        width: 70%;
+        float: left;
+    }
+    .image{
+        width: 55%;
+    }
+    .col{
+        width: 50%;
+    }
+}
